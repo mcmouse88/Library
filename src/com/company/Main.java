@@ -24,6 +24,7 @@ public class Main {
         winstonAdministrator.giveBook(dracula, johnReader, winstonAdministrator);
         johnReader.getBook(dracula);
         winstonAdministrator.overdueNotification(johnReader, dracula, winstonAdministrator);
+        johnReader.readBook(dracula);
         johnReader.returnBook(dracula);
 
         mustafaSupplier.askedBook(dune, jamesLibrarian);
@@ -31,6 +32,7 @@ public class Main {
         jamesLibrarian.giveBook(dune, mustafaSupplier, jamesLibrarian);
         mustafaSupplier.getBook(dune);
         jamesLibrarian.overdueNotification(mustafaSupplier, dune, jamesLibrarian);
+        mustafaSupplier.readBook(dune);
         mustafaSupplier.returnBook(dune);
     }
 }

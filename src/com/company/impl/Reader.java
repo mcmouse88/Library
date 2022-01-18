@@ -7,5 +7,9 @@ public interface Reader {
 
     void getBook(Book book);
 
+    void readBook(Book book);
+
     void returnBook(Book book);
+
+    String getName();
 }
