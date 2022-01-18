@@ -1,9 +1,11 @@
 package com.company.impl;
 
+import com.company.Book;
+
 public interface Reader {
-    void askedBook(String Book, Administrator administrator);
+    void askedBook(Book book, Administrator administrator);
 
-    void getBook(String book);
+    void getBook(Book book);
 
-    void returnBook(String book);
+    void returnBook(Book book);
 }

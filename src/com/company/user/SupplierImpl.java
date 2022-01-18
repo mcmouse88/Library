@@ -1,10 +1,9 @@
 package com.company.user;
 
-import com.company.impl.Reader;
+import com.company.Book;
 import com.company.impl.Supplier;
 
 public class SupplierImpl extends User implements Supplier {
-    public Object object;
 
     public SupplierImpl(String name) {
         super(name);
@@ -12,7 +11,7 @@ public class SupplierImpl extends User implements Supplier {
     }
 
     @Override
-    public void deliveryBook(String book) {
+    public void deliveryBook(Book book) {
         System.out.format("%s %s принес книгу \"%s\" в библиотеку%n", role, name, book);
     }
 }

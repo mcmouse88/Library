@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.impl.Reader;
-import com.company.impl.Supplier;
 import com.company.user.AdministratorImpl;
 import com.company.user.LibrarianImpl;
 import com.company.user.ReaderImpl;
@@ -14,22 +12,25 @@ public class Main {
         LibrarianImpl jamesLibrarian = new LibrarianImpl("Джеймс");
         SupplierImpl mustafaSupplier = new SupplierImpl("Мустафа");
         AdministratorImpl winstonAdministrator = new AdministratorImpl("Уинстон");
+        Book dracula = new Book("Дракула");
+        Book dune = new Book("Дюна");
+        Book dandelionWine = new Book("Вино из одуванчиков");
 
-        jamesLibrarian.toOrderBook(mustafaSupplier, "Вино из одуванчиков");
-        mustafaSupplier.deliveryBook("Вино из одуванчиков");
+        jamesLibrarian.toOrderBook(mustafaSupplier, dandelionWine);
+        mustafaSupplier.deliveryBook(dandelionWine);
 
-        johnReader.askedBook("Дракула", winstonAdministrator);
-        winstonAdministrator.findBook("Дракула", winstonAdministrator);
-        winstonAdministrator.giveBook("Дракула", johnReader, winstonAdministrator);
-        johnReader.getBook("Дракула");
-        winstonAdministrator.overdueNotification(johnReader, "Дракула", winstonAdministrator);
-        johnReader.returnBook("Дракула");
+        johnReader.askedBook(dracula, winstonAdministrator);
+        winstonAdministrator.findBook(dracula, winstonAdministrator);
+        winstonAdministrator.giveBook(dracula, johnReader, winstonAdministrator);
+        johnReader.getBook(dracula);
+        winstonAdministrator.overdueNotification(johnReader, dracula, winstonAdministrator);
+        johnReader.returnBook(dracula);
 
-        mustafaSupplier.askedBook("Дюна", jamesLibrarian);
-        jamesLibrarian.findBook("Дюна", jamesLibrarian);
-        jamesLibrarian.giveBook("Дюна", mustafaSupplier, jamesLibrarian);
-        mustafaSupplier.getBook("Дюна");
-        jamesLibrarian.overdueNotification(mustafaSupplier, "Дюна", jamesLibrarian);
-        mustafaSupplier.returnBook("Дюна");
+        mustafaSupplier.askedBook(dune, jamesLibrarian);
+        jamesLibrarian.findBook(dune, jamesLibrarian);
+        jamesLibrarian.giveBook(dune, mustafaSupplier, jamesLibrarian);
+        mustafaSupplier.getBook(dune);
+        jamesLibrarian.overdueNotification(mustafaSupplier, dune, jamesLibrarian);
+        mustafaSupplier.returnBook(dune);
     }
 }
